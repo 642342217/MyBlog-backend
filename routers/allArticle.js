@@ -5,6 +5,6 @@ const router = express.Router();
 
 const handleArticle = require('../router_handlers/allArticle');
 
-router.get('/getAllArticle', handleArticle.getAllArticle);
+router.get('/getAllArticles', handleArticle.getAllArticle);
 
 module.exports = router;

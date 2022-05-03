@@ -1,9 +1,8 @@
 const db = require('../db/index');
 
-
-// 获取所有文章信息
-exports.getAllArticle = (req, res) => {
-    const sql = 'select * from articles';
+//获取所有的目录
+exports.getAllCategory = (req, res) => {
+    const sql = 'select * from categories';
 
     db.query(sql, (err, results) => {
         if(err) {
@@ -12,9 +11,8 @@ exports.getAllArticle = (req, res) => {
 
         res.send({
             status: 0,
-            message: '获取文章信息成功！',
+            message: '获取文章目录成功！',
             data: results
-        })
-    })
-
+        });
+    }); 
 }

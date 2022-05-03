@@ -5,11 +5,9 @@ date: 2021-11-28
 ---
 
 #### HTML语义化
-
 为什么要使用语义化标签呢？在开发过程中，我们使用DIV+CSS也能做出一样的效果，单纯看效果，两者并没有什么区别，但是，页面不单是只给用户看的，浏览器也要看的，以及我们后续的维护也要看代码的。清晰、具有语义化的网页结构对浏览器更友好，更有利于开发者进行后期维护。
 
 ##### 优点：
-
 - 语义化标签有助于构造良好的HTML结构，无CSS时也能进行网页阅读
 - 有利于搜索引擎的建立索引、抓取。简单来说，试想一下h1标签中匹配到的关键词和在div中匹配到的关键词，搜索引擎会把哪个结果放在前面。
 - 有利于构建清晰的结构，有利于团队的开发、维护。
@@ -17,7 +15,6 @@ date: 2021-11-28
 
 
 #### 常见的水平垂直居中问题
-
 **对于`行内元素`**
 
  水平居中：`text-align: center;`
@@ -70,7 +67,7 @@ date: 2021-11-28
 
 （3）使用伪类选择器清除浮动
 
-```JavaScript
+```javascript
 :after{
     content:'';
     display:block;  //必须为块级元素
@@ -93,24 +90,23 @@ date: 2021-11-28
 - 解决问题：float的高度塌陷；margin的边距重叠（原理就是将边距重叠的块级元素放进一个盒子里面，此盒子是BFC，当求margin上的垂直距离时，会以它为标准，从而解决margin重叠问题）
 
 
-```javascript
+```
 .container {
         background-color: green;
         overflow: hidden;
-    }
-
+}  
 .inner {
     background-color: lightblue;
     margin: 10px 0;
-}
+}  
 .test{
     overflow: hidden;
-}
+}  
 <div class="container">
     <div class="inner">1</div>
     <div class="test"><div class="inner">2</div></div>     //此处记得包裹一个块级元素
     <div class="inner">3</div>
-</div>		
+</div>  
 ```
 
 
@@ -121,7 +117,7 @@ date: 2021-11-28
 
 任何一个容器都可以指定为Flex布局
 
-```javascript
+```
 .box{
     display: flex;
 }
@@ -129,7 +125,7 @@ date: 2021-11-28
 
 行内元素也可以使用Flex布局
 
-```javascript
+```
 .box{
     display: inline-flex;
 }
@@ -145,7 +141,7 @@ date: 2021-11-28
 
 - flex-direction：决定主轴的方向，默认为row（项目从左至右依次排列）
 
-  ```javascript
+  ```
   .box{
       flex-direction: row | row-reverse | column | column-reverse;
   }
@@ -153,7 +149,7 @@ date: 2021-11-28
 
 - flex-wrap：决定项目是否换行，默认为no-wrap
 
-  ```javascript
+  ```
   .box{
       flex-wrap: nowrap | wrap | wrap-reverse(第一行在下方，即进行换行的项目排列在第一行);
   }
@@ -161,7 +157,7 @@ date: 2021-11-28
 
 - flex-flow：flex-direction和flex-wrap的简写形式
 
-  ```javascript
+  ```
   .box{
       flex-flow: <flex-direction> | <flex-wrap>;
   }
@@ -169,7 +165,7 @@ date: 2021-11-28
 
 - justify-content：决定项目在主轴上的对齐方式，默认为flex-start
 
-  ```javascript
+  ```
   .box{
       justify-content: flex-start | flex-end | center | space-between（两端对齐，项目之间的间隔都相等） | space-around(项目两侧的间隔都相等，所以，项目之间的间隔比项目与边框的间隔大一倍);
   }
@@ -177,7 +173,7 @@ date: 2021-11-28
 
 - align-items：决定项目在交叉轴上如何对齐，默认为stretch
 
-  ```javascript
+  ```
   .box{
       align-items: flex-start | flex-end | center | baseline(项目的第一行文字的基线对齐) | stretch(如果项目未设置高度或设为auto，将占满整个容器的高度);
   }
