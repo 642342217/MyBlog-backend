@@ -8,9 +8,6 @@ const app = express();
 //设置跨域
 app.use(cors());
 
-//读取文件，并存入数据库
-parse();
-
 // 处理出错中间件
 app.use(function(req, res, next) {
     res.cc = (err, status = 1) => {
@@ -22,6 +19,9 @@ app.use(function(req, res, next) {
 
     next();
 });
+
+//读取文件，并存入数据库
+parse();
 
 //获取所有文章信息
 const articleRouter = require('./routers/allArticle');

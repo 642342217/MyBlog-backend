@@ -1,7 +1,6 @@
 const fs = require('fs');
 const db = require('../db/index');
 const path = require('path');
-const { markdown } = require('markdown');
 
 
 //处理头部字段数据
@@ -76,9 +75,6 @@ function parseArticle(path) {
     //获取处理过后的数据
     let { articleCategory, articleContent, articleDate, articleTitle } = res;
 
-    //markdown文档转换为html
-    // articleContent = markdown.toHTML(articleContent);
-
     // 将其插入数据库
     const sql = 'insert into articles (title, date, category, content) values(?,?,?,?) ';
     const insertValue = [articleTitle, articleDate, articleCategory, articleContent];
@@ -100,7 +96,9 @@ function parseCategories(path) {
     const sql = 'insert into categories (name) values(?) ';
     const insertValue = categoryName;
     db.query(sql, insertValue, (err) => {
-        console.log(err);
+        if(err) {
+            console.log(err);
+        }
     })
 }
 

@@ -1,6 +1,6 @@
 ---
 title: this的指向问题
-category: Javascript
+category: JavaScript
 date: 2022-3-24
 ---
 
