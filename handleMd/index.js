@@ -8,6 +8,9 @@ const handleData = (data, index) => {
     let temp = index;
     while(data[index] !== '\n' && data[index] !== '\r') {
         index++;
+        
+        
+        
     }
     return data.slice(temp, index);
 }
